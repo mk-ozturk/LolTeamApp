@@ -39,91 +39,94 @@ class UsersAdd extends StatelessWidget {
           title: Text("Lol Gardaşı Ekle"),
         ),
         body: Center(child:
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Spacer(flex: 2,),
-          Row(mainAxisAlignment: MainAxisAlignment.center,
+        Container(
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage("lib/photos/sb-teemo.jpg"),fit: BoxFit.cover,opacity: 200),),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: SizedBox(width: scrwidth/5*2,
-                  child: TextField(
-                    controller:nameField ,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: "Ad"
+              Spacer(flex: 2,),
+            Row(mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: SizedBox(width: scrwidth/5*2,
+                    child: TextField(
+                      controller:nameField ,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Ad",
+                      ),
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: SizedBox(width: scrwidth/5*2,
+                    child: TextField(
+                      controller: surnameField,
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: "Soyad"
+
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Spacer(flex: 1,),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0,right: 30),
+              child: TextField(
+                controller: nickField,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Nick Name"
+
+                ),
+              ),
+            ),
+              Spacer(flex: 1,),
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0,right: 30),
+              child: TextField(
+                controller: picField,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: "Profil Fotoğrafı Url"
+              ),
+
+              ),
+            ),
+              Spacer(flex: 2,),
+
+
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Container(width: 100,
+                child: ElevatedButton(onPressed: (){
+                  kayit(nameField.text, surnameField.text,picField.text , nickField.text);
+                  print("${nameField.text} ${surnameField.text} ${nickField.text} ${picField.text} ");
+                }, child: Text("Ekle")),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
-                child: SizedBox(width: scrwidth/5*2,
-                  child: TextField(
-                    controller: surnameField,
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: "Soyad"
-
-                    ),
-                  ),
+                child: Container(width: 100,
+                  child: ElevatedButton(onPressed: (){
+                    Navigator.pop(context);
+                  }, child: Text("İptal")),
                 ),
-              ),
-            ],
-          ),
-          Spacer(flex: 1,),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0,right: 30),
-            child: TextField(
-              controller: nickField,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "Nick Name"
+              )
 
-              ),
-            ),
-          ),
-            Spacer(flex: 1,),
-          Padding(
-            padding: const EdgeInsets.only(left: 30.0,right: 30),
-            child: TextField(
-              controller: picField,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: "Profil Fotoğrafı Url"
-            ),
-
-            ),
-          ),
-            Spacer(flex: 2,),
+            ],),
+              Spacer(flex: 1,)
 
 
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Container(width: 100,
-              child: ElevatedButton(onPressed: (){
-                kayit(nameField.text, surnameField.text,picField.text , nickField.text);
-                print("${nameField.text} ${surnameField.text} ${nickField.text} ${picField.text} ");
-              }, child: Text("Ekle")),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
-              child: Container(width: 100,
-                child: ElevatedButton(onPressed: (){
-                  Navigator.pop(context);
-                }, child: Text("İptal")),
-              ),
-            )
 
           ],),
-            Spacer(flex: 1,)
-
-
-
-        ],)
+        )
 
           ,)
     );

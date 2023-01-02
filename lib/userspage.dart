@@ -71,26 +71,29 @@ class _UserPageState extends State<UserPage> {
           }, icon: Icon(Icons.delete))
         ],
       ),
-      body: Center(child:
-      Column(mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Spacer(flex: 3,),
-        Container(
-            width: 200,height: 200,
-            child: Image.network(Uri.parse(widget.upUrl).toString())),
-        Spacer(flex: 1,),
-        Text("${widget.upName} ${widget.upSurname}", style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-        Text(widget.upNick,style: TextStyle(fontWeight: FontWeight.bold ),),
-        Spacer(flex: 1,),
-        Text("${widget.upCount.toString()}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-          Spacer(flex: 3,)
+      body: Container(
+        decoration: BoxDecoration(image: DecorationImage(image: AssetImage("lib/photos/sb-teemo.jpg"),fit: BoxFit.cover,opacity: 200),),
+        child: Center(child:
+        Column(mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Spacer(flex: 3,),
+          Container(
+              width: 200,height: 200,
+              child: Image.network(Uri.parse(widget.upUrl).toString())),
+          Spacer(flex: 1,),
+          Text("${widget.upName} ${widget.upSurname}", style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+          Text(widget.upNick,style: TextStyle(fontWeight: FontWeight.bold ),),
+          Spacer(flex: 1,),
+          Text("${widget.upCount.toString()}",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+            Spacer(flex: 3,)
 
 
 
 
-      ],)
+        ],)
 
-        ,)
+          ,),
+      )
 
 
     );
