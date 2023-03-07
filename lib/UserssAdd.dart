@@ -36,7 +36,7 @@ class UsersAdd extends StatelessWidget {
     var picField=TextEditingController();
     return Scaffold(
         appBar: AppBar(
-          title: Text("Lol Gardaşı Ekle"),
+          title: Text("Takım Arkadaşı Ekle"),
         ),
         body: Center(child:
         Container(
